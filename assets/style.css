@@ -31,6 +31,8 @@ html {
     overscroll-behavior: none;
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+
+    overflow-x: hidden;
 }
 
 /* =================================================================================
@@ -133,8 +135,8 @@ button,
 ================================================================================== */
 
 body {
-    width: 100dvw;
-    min-height: 100dvh;
+    width: 100%;
+    min-height: 100vh;
     background: var(--base);
 
     &>div {
@@ -155,10 +157,13 @@ body {
 
 header {
     height: 3rem;
+    width: 100%;
+    box-shadow: 0px 0px 10px 10px var(--shadow-dark);
     background-color: oklch(from var(--base) calc(l + 0.05) c h);
     /* ==== 画面上部に固定 ==== */
     position: fixed;
-    inset: 0 0 auto 0;
+    top: 0;
+    left: 0;
     z-index: 1024;
 
     &>a {
@@ -189,6 +194,8 @@ header {
 ================================================================================== */
 
 main {
+    width: 100%;
+
     & :not(:is(button))>a {
         color: var(--text);
         text-decoration: none;
@@ -309,7 +316,7 @@ main>div.eyeCatch {
         height: 100%;
         position: absolute;
         z-index: -1024;
-        background-image: url('/images/eyeCatch.webp');
+        background-image: url('/images/eyecatch.webp');
         background-size: cover;
         background-position: center;
         filter: brightness(0.5) blur(10px);
