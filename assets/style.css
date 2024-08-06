@@ -408,8 +408,8 @@ section div.cards {
 
     &>.card {
         padding: .5rem;
-
-        height: max-content;
+        display: flex;
+        flex-direction: column;
 
         &>*+* {
             margin-top: .5rem;
@@ -442,6 +442,10 @@ section div.cards {
                 width: 100%;
                 text-decoration: none;
             }
+        }
+
+        &>:last-child {
+            margin-top: auto;
         }
     }
 }
