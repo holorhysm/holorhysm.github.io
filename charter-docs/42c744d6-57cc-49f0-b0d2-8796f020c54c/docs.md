@@ -64,7 +64,8 @@
     "function": [
         {
             "when": [  2,  0,  4],
-            "what": "$.chart.notes[1].type = `hover`;",
+            "main": "console.log(_.DB)",
+            "worker": "console.log($.chart.notes)",
         },
         // (以下省略)
     ],
@@ -140,7 +141,7 @@
 - 1小節目の開始位置を表す数字です。単位は「秒」です。
 - 1小節目の開始位置が0未満であってはいけません。
 	- 一応動くとは思いますが、他の仕様との兼ね合いでバグが発生しかねないので避けてください。
-- 許容される型は **`Number}`** です。 
+- 許容される型は **`{Number}`** です。 
 
 ### chart.notes
 
@@ -282,12 +283,26 @@
 > - [このページ](https://developer.mozilla.org/ja/docs/Web/CSS/named-color)にある一覧表にあるキーワードが使えます
 > - `"#FF0000"`みたいなやつも使えます
 > - [このページ](https://oklch.com/)の`"oklch(27.1% 0.062 281.44)"`みたいなやつも使えます
-> - 疑似ロングノーツには`"pseudoLong"`を指定するといいでしょう
+> - 疑似ロングノーツには`"pseudolong"`を指定するといいでしょう
 
 ```json
             // 単色のデコレーターの場合、デコレーターの色をCSSの<color>型として解釈できる文字列で指定します。
             "color": "rgb(255 127 127 / .5)",
 ```
+
+> ###### ver0.5.0 暫定仕様
+> 
+> ver0.5.0ではSafari 17.6が一部の構文に対応していないことに起因するバグを回避するために、color文字列の解析を自前で実装しています。
+> この関係で、一部の記法が使用不可となっています。
+> 現在使える色指定の方法は、後述するもののうち、以下の方法のみとなります。
+> 
+> - `<named-color>`
+> - `<hex-color>`
+> - `<color-function>`のうち、`rgb()`, `hsl()`, `oklab()`, `oklch()`
+> 	- 相対色構文には対応していますが、fromのあとに続くcolorも同様にこの一覧にあるものしか対応していません
+> 	- `rgb()`のLegacy構文(カンマ区切り)は対応していません
+> - キーワード`pseudolong`
+> 	- `<named-color>`が使える場所ならどこでも使えます
 
 - \<named-color\>型のキーワード
 	- `"red"`, `"aqua"`, `"violet"`, `"rebeccapurple"`などが挙げられます。
@@ -311,14 +326,15 @@
 	- それぞれの色空間関数の最初の引数に`from <color>`を追加して使います。
 	- 「基準の色に対してこのくらい変化させる」といったときに使えます。
 
-また、特別なキーワードとして`"pseudoLong"`を使用することができます。
+また、特別なキーワードとして`"pseudolong"`を使用することができます。
 
-- holorhysmのシステムは、`"pseudoLong"`を「hoverノーツの色の透明度を50%にした色」として解釈します。
+- holorhysmのシステムは、`"pseudolong"`を「hoverノーツの色の透明度を50%にした色」として解釈します。
 	- ノーツのスキン変更に伴ってhoverノーツの色が変わっても、hoverノーツにあった色になります。
 	- デコレーターとhoverノーツを使用した疑似ロングノーツに使う想定です。
 	- 相対色構文の基準色に指定することもできます。
-		- 例 : `rgb(from pseudoLong r g b / .5)`
+		- 例 : `rgb(from pseudolong r g b / .5)`
 		- ~~*できるようにします*~~
+
 
 ##### グラデーションをかける場合
 
@@ -516,15 +532,14 @@
     "function": [
         {
             "when": [  2,  0,  4],
-            "what": "$.chart.notes[1].type = `hover`;",
+            "main": "console.log(_.DB)",
+            "worker": "console.log($.chart.notes)",
         },
         // (以下省略)
     ],
 ```
 
 - **必須**のプロパティです。
-- **ver0.5.0時点で未対応**です。
-	- ver0.6.0以降に対応する予定です。
 - セッション中の特定タイミングで実行する「カスタム関数」を表すオブジェクトをすべて格納した配列です。
 - 必ずしもオブジェクトが含まれている必要はありません。
 	- カスタム関数がない譜面をつくる場合は空配列を指定してください。
@@ -549,21 +564,64 @@
 	- 例 : `[2, 3, 8]` → 2小節目の先頭から8分音符3つ分後ろのタイミング
 - 許容される型は **`{Number[]}`** です。
 
-#### chart.function\[\].what
+#### chart.function\[\].main
 
 ```json
-            // 実行する関数の内容を記述します。
-            "what": "alert('May we meet again in the tower.');",
+            // メインスレッドで実行する関数の内容を記述します。
+            "main": "console.log(_.DB)",
 ```
 
 - **必須**のプロパティです。
-- **実行する関数のコード**を、JavaScriptの(関数の中身の)コードとして有効なStringで指定します。
+- **メインスレッドで実行する関数のコード**を、JavaScriptの(関数の中身の)コードとして有効なStringで指定します。
 	- 技術的補足 : `Function("_", ここに入れる文字列を指定)(後述する'_');`
 - 許容される型は **`{String}`** です。
 
-##### `_` (on custom function)
+##### `_` (on custom function "main")
 
-カスタム関数のコード内では、引数として`_`が用意され、ここから様々なオブジェクトにアクセスすることができます。
-*~~できるようにします~~*
+`chart.function[].main`で実行する関数には、引数として`_`という名前のオブジェクトが渡されます。
+以下は、`_`の中身の説明です。
 
-> 技術的補足 : `_`の中身はすべてシャローコピーです。ディープコピーではないため代入したら元の方にも反映されるはずです。
+- `_`
+	- `.audioUnit` - 楽曲を再生しているAudioUnit (実装は`/scripts/modules/audioUnit.js`を参照)
+	- `.canvas` - 譜面描画先のHTMLCanvasElement
+	- `.DB` - 譜面DBファイルのうち、現在プレイ中の楽曲/譜面の部分の情報を持つObject
+		- `.music` - 譜面DBファイルのうち、現在プレイ中の楽曲の部分の情報を持つObject
+		- `.chart` - 譜面DBファイルのうち、現在プレイ中の譜面の部分の情報を持つObject
+	- `.chart` - 基本的にはプレイ中の譜面ファイルのObjectだが、追加で以下のプロパティを持つ
+		- `.barStartAtPx[]` - (`{Number[]}`)i小節目が1小節目先頭から何pxスクロールした位置からはじまるか
+		- `.barStartAtSec[]` - (`{Number[]}`)i小節目が1小節目先頭から何秒経過したタイミングからはじまるか
+	- `.worker` - 描画・計算処理を実行してくれているWorker
+	- `.containerDiv` - 現在のセッション画面のHTMLDivElement
+
+> 技術的補足 : `_`の中身はシャローコピーになっているはずなので、代入すれば下の方にも反映されます
+
+#### chart.function\[\].worker
+
+```json
+            // ワーカースレッドで実行する関数の内容を記述します。
+            "worker": "console.log($.chart.notes)",
+```
+
+- **必須**のプロパティです。
+- **ワーカースレッドで実行する関数のコード**を、JavaScriptの(関数の中身の)コードとして有効なStringで指定します。
+	- 技術的補足 : `Function("_", ここに入れる文字列を指定)(後述する'_');`
+- 許容される型は **`{String}`** です。
+
+##### `$` (on custom function "worker")
+
+`chart.function[].worker`で実行する関数には、引数として`_`という名前のオブジェクトが渡されます。
+以下は、`_`の中身の説明です。
+
+- `$`
+	- `.chart` - 譜面ファイルのObjectですが、以下のような相違点があります
+		- `.barStartAtPx[]`, `.barStartAtSec[]`を持つ(main側と同様)
+		- `.beats`, `.bpm`, `.soflan`がFunctionになっている(引数は小節番号)
+		- `.notes[]`に判定済みのノーツはない (`.decorator[]`, `.function[]`も同様)
+	- `.canvas` - 次のフレームでの状態を描画するためのOffscreenCanvas。
+	- `.nowPlaying_sec` - 今楽曲の何秒の位置を再生している(と推測される)か
+	- `.LocalStorageEX_Ref` - Worker起動時点の`LocalStorageEX`
+		- holorhysmでは`LocalStorage`にObjectを入れるために`LocalStorageEX`でラップしています
+	- `.tryJudgingNote(note, time)` - ノーツが指定時刻に叩かれたものとして判定処理を試みる
+		- `note`は`$.chart.notes[]`にあるもの、`time`は`audioUnit.currentTime`(秒)基準
+	- `.judgeWidth` - 判定幅(±○ms)
+		- `.judgeWidth["sync+"]`, `.sync`, `.connect`, `.jamming`があります
