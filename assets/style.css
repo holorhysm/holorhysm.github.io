@@ -293,6 +293,14 @@ main {
         border-radius: 1rem;
         border: 1px solid oklch(from var(--text) l c h / .25);
     }
+
+    & section section {
+        padding: .5rem;
+
+        &>*:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
 }
 
 /* =================================================================================
