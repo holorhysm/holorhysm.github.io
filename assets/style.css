@@ -66,6 +66,7 @@ html {
 section,
 div.card,
 main img,
+table,
 .neumorphism-up {
     border-radius: 1rem;
     box-shadow: -3px -3px 4px var(--shadow-light), 3px 3px 4px var(--shadow-dark);
@@ -299,6 +300,54 @@ main {
 
         &>*:not(:last-child) {
             margin-bottom: .5rem;
+        }
+    }
+
+    & table {
+        width: 100%;
+        border: 1px solid oklch(from var(--text) l c h / .33);
+        border-spacing: .125rem;
+        border-radius: .5rem;
+
+        & :is(tr, th, td, thead, tbody) {
+            overflow: hidden;
+            border-radius: .25rem;
+        }
+
+        &>thead {
+            background-color: oklch(from var(--text) l c h / .06);
+
+            & * {
+                font-weight: bolder;
+            }
+        }
+
+        &>tbody>tr:last-child>td {
+            &:first-child {
+                border-bottom-left-radius: .5rem;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: .5rem;
+            }
+        }
+
+        & th,
+        & td {
+            padding: .125rem .25rem;
+            text-align: center;
+        }
+
+        & th {
+            background-color: oklch(from var(--text) l c h / .06);
+        }
+
+        & tr:nth-child(odd) {
+            background-color: oklch(from var(--text) l c h / .02);
+        }
+
+        & tr:nth-child(even) {
+            background-color: oklch(from var(--text) l c h / .04);
         }
     }
 }
