@@ -3,13 +3,10 @@
 ================================================================================== */
 
 /* ==== 'M PLUS 1p' - 通常フォント ==== */
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
 /* ==== 'Ubuntu' - 英字デザインフォント ==== */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-/* ==== 'Source Code Pro' - 等幅フォント ==== */
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+/* ==== 'M PLUS 1 Code' - 等幅フォント ==== */
 /* ==== 'Zen Kurenaido' - 手書きフォント ==== */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zen+Kurenaido&display=swap');
 /* ==== 'Font Awesome 6 Free' - アイコンフォント ==== */
 @import url('https://use.fontawesome.com/releases/v6.5.2/css/all.css');
 
@@ -68,6 +65,8 @@ html {
 
 section,
 div.card,
+main img,
+table,
 .neumorphism-up {
     border-radius: 1rem;
     box-shadow: -3px -3px 4px var(--shadow-light), 3px 3px 4px var(--shadow-dark);
@@ -199,6 +198,7 @@ main {
         text-decoration: none;
         padding: 0 .25rem;
         position: relative;
+        font: inherit;
 
         &::after {
             content: '';
@@ -218,7 +218,7 @@ main {
     }
 
     & :not(pre)>code {
-        font-family: 'Source Code Pro', monospace;
+        font-family: 'M PLUS 1 Code', monospace;
         font-weight: 400;
         background-color: oklch(from var(--base) 0 c h / .5);
         padding: 0 .25rem;
@@ -236,7 +236,7 @@ main {
         overflow-x: auto;
 
         &>code {
-            font-family: 'Source Code Pro', monospace;
+            font-family: 'M PLUS 1 Code', monospace;
         }
     }
 
@@ -273,6 +273,7 @@ main {
     & blockquote {
         padding-left: .5rem;
         border-left: 4px solid rgb(from var(--text) r g b / .5);
+        opacity: .8;
     }
 
     & strong,
@@ -283,6 +284,71 @@ main {
     & em,
     & i {
         font-style: italic;
+    }
+
+    & img:not(.thumbnail) {
+        display: block;
+        max-width: calc(100% / 1.5);
+        max-height: calc(100vh / 3);
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 1px solid oklch(from var(--text) l c h / .25);
+    }
+
+    & section section {
+        padding: .5rem;
+
+        &>*:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    & table {
+        width: 100%;
+        border: 1px solid oklch(from var(--text) l c h / .33);
+        border-spacing: .125rem;
+        border-radius: .5rem;
+
+        & :is(tr, th, td, thead, tbody) {
+            overflow: hidden;
+            border-radius: .25rem;
+        }
+
+        &>thead {
+            background-color: oklch(from var(--text) l c h / .06);
+
+            & * {
+                font-weight: bolder;
+            }
+        }
+
+        &>tbody>tr:last-child>td {
+            &:first-child {
+                border-bottom-left-radius: .5rem;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: .5rem;
+            }
+        }
+
+        & th,
+        & td {
+            padding: .125rem .25rem;
+            text-align: center;
+        }
+
+        & th {
+            background-color: oklch(from var(--text) l c h / .06);
+        }
+
+        & tr:nth-child(odd) {
+            background-color: oklch(from var(--text) l c h / .02);
+        }
+
+        & tr:nth-child(even) {
+            background-color: oklch(from var(--text) l c h / .04);
+        }
     }
 }
 

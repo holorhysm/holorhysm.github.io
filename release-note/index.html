@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Release Note - holorhysm</title>
+    <!-- ファイル読み込み -->
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/script.js" type="module"></script>
+    <!-- ==== favicon設定 ==== -->
+    <link rel="icon" href="/images/icon.svg">
+    <!-- ==== OGP設定 ==== -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Release Note - holorhysm">
+    <meta property="og:description" content="Release Note - holorhysm">
+    <meta name="twitter:card" content="summary">
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <img src="/images/icon.webp" alt="holorhysm icon" class="icon">
+            <h1>holorhysm</h1>
+        </a>
+    </header>
+    <main>
+        <div class="eyeCatch">
+            <h1>Release Note</h1>
+            <p class="sub">アップデート情報</p>
+        </div>
+        <nav class="breadcrumb">
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/release-note/">Release Note</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h2 id="0-5-0">ver0.5.0</h2>
+            <p>Released on 2024-08-30</p>
+            <section>
+                <h3>新機能</h3>
+                <h4>全設計の刷新</h4>
+                <p>
+                    今回のアップデートでは、全てのコードを一から作り直しています。<br>
+                    これに伴い、UIの変更やパフォーマンス向上が行われています。
+                </p>
+                <h4>設定の充実化</h4>
+                <p>
+                    ver0.5.0より、新しい設定項目が追加されています。<br>
+                    より細かい設定が可能となります。
+                <table>
+                    <thead>
+                        <tr>
+                            <th>設定項目</th>
+                            <th>説明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>楽曲オフセット(秒)</td>
+                            <td>楽曲の再生タイミングを調整します。</td>
+                        </tr>
+                        <tr>
+                            <td>目標フレームレート(fps)</td>
+                            <td>目安とするフレームレートを設定します。(端末によって効果範囲が異なります)</td>
+                        </tr>
+                        <tr>
+                            <td>デコレーター透明度(%)</td>
+                            <td>後述する「デコレーター」の透明度を調整します。</td>
+                        </tr>
+                        <tr>
+                            <td>譜面の解像度(px)</td>
+                            <td>譜面の描画解像度を指定します。低解像度でプレイすることで負荷が軽減されます。</td>
+                        </tr>
+                        <tr>
+                            <td>SE音量(%)</td>
+                            <td>効果音の音量を調整します。現時点ではボタンクリック音のみに効果があります。</td>
+                        </tr>
+                        <tr>
+                            <td>楽曲音量(%)</td>
+                            <td>楽曲再生の音量を調整します。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </p>
+            </section>
+            <section>
+                <h3>楽曲・譜面・イベント</h3>
+                <h4>チュートリアル譜面を追加！</h4>
+                <img src="./images/0-5-0/35f60c4.webp" alt="">
+                <p>
+                    デコレーターの追加に合わせて、チュートリアル譜面を追加しました。
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Difficulty</th>
+                            <th>Lv.</th>
+                            <th>Charter</th>
+                            <th>備考</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(๑╹ᆺ╹)⊃━*.☆ﾟ</td>
+                            <td>??</td>
+                            <td>Ayasaka-Koto (Produced by AyagawaP)</td>
+                            <td>楽曲は『スタースタースタート』</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </p>
+                <h4>『Shiny Smily Story (2022 ver.)』譜面リニューアル</h4>
+                <img src="./images/0-5-0/278b013.webp" alt="">
+                <p>
+                    『Shiny Smily Story (2022 ver.)』の元<b>Normal</b>・<b>Hard</b>譜面が、ver0.4.5までの譜面をベースにリニューアルされました。<br>
+                    これに伴い、譜面制作者名義・譜面名称が変更されています。
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="3">〜ver0.4.5</th>
+                            <th rowspan="2">→</th>
+                            <th colspan="3">ver0.5.0〜</th>
+                        </tr>
+                        <tr>
+                            <th>Difficulty</th>
+                            <th>Lv.</th>
+                            <th>Charter</th>
+                            <th>Difficulty</th>
+                            <th>Lv.</th>
+                            <th>Charter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Normal</td>
+                            <td>??</td>
+                            <td>久留島</td>
+                            <td>→</td>
+                            <td><b>Basic(dev)</b></td>
+                            <td>??</td>
+                            <td><b>久留島 (modified by AyagawaP)</b></td>
+                        </tr>
+                        <tr>
+                            <td>Hard</td>
+                            <td>??</td>
+                            <td>久留島</td>
+                            <td>→</td>
+                            <td><b>Sparkle(dev)</b></td>
+                            <td>??</td>
+                            <td><b>久留島 (modified by AyagawaP)</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </p>
+            </section>
+            <section>
+                <h3>既知のバグ</h3>
+                <h4>タッチ判定が欠落することがある</h4>
+                <p>
+                    iPhoneおよびiPadにおいて、一定以上の速度で連打するとタッチ判定が欠落することがあります。<br>
+                    調査の結果、<u>この問題のholorhysm側での修正は不可能</u>という結論に至りました。<br>
+                    今後のiOS/iPadOS(WebKit)のアップデートにより解消される可能性があります。
+                </p>
+                <p>
+                    検証の結果、常に1点以上指を触れることで判定の欠落をほぼ解消できることが確認されています。<br>
+                    そのため、使用しない指を常に画面に触れておくことで、この問題を緩和することができます。<br>
+                    また、導電性スポンジやタッチペンの先端、みかんの皮やグミなどのタッチパネルを反応させることができるものを画面上に置いておくことでもこの問題を緩和することができる可能性があります。
+                </p>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p><small>&copy; 2023- Ayasaka-Koto, All rights reserved.</small></p>
+    </footer>
+</body>
+
+</html>
