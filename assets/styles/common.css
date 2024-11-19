@@ -199,7 +199,7 @@ body {
             position: relative;
             width: 100%;
             height: 50vw;
-            max-height: 50vh;
+            max-height: 33vh;
 
             &>div.slideshow {
                 position: absolute;
@@ -218,6 +218,26 @@ body {
                     top: -12px;
                     left: -12px;
                     filter: blur(8px);
+                }
+            }
+
+            &>hgroup.phrases {
+                position: absolute;
+                left: 1rem;
+                bottom: 1rem;
+                display: block;
+                background-color: oklch(from var(--base) l c h / .5);
+                padding: .5rem;
+                border-radius: 1rem;
+
+                &>h1 {
+                    font: 500 1.5rem/2rem 'Ubuntu', 'M PLUS 1p';
+                    color: var(--text);
+                }
+
+                &>p {
+                    font: 300 1rem/1.5 'Ubuntu', 'M PLUS 1p';
+                    color: var(--text);
                 }
             }
         }
