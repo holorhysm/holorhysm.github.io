@@ -1,0 +1,62 @@
+[
+    {
+        "date": "2024-03-15",
+        "type": "Dev's Letter",
+        "desc": "#1  次期バージョンに向けた譜面エディターの新調",
+        "path": "https://note.com/axt_ayakoto/n/nc1df526dbb89"
+    },
+    {
+        "date": "2024-08-03",
+        "type": "Dev's Letter",
+        "desc": "#2  次期バージョンのゲームシステムの構築",
+        "path": "https://note.com/axt_ayakoto/n/n9d6102f30163"
+    },
+    {
+        "date": "2024-08-29",
+        "type": "Dev's Letter",
+        "desc": "#3  ver0.5.0の告知 & 今後の更新予定",
+        "path": "https://note.com/axt_ayakoto/n/ned125243678b"
+    },
+    {
+        "date": "2024-10-28",
+        "type": "Dev's Letter",
+        "desc": "#α  制作チームメンバーの募集について",
+        "path": "https://note.com/axt_ayakoto/n/n41b7ae301829"
+    },
+    {
+        "date": "2024-08-30",
+        "type": "Update",
+        "desc": "ver0.5.0 Released!",
+        "path": "#Update_v0-5-0"
+    },
+    {
+        "date": "2024-09-08",
+        "type": "Update",
+        "desc": "ver0.5.1 Released!",
+        "path": "#Update_v0-5-1"
+    },
+    {
+        "date": "2024-09-13",
+        "type": "Update",
+        "desc": "ver0.5.2 Released!",
+        "path": "#Update_v0-5-2"
+    },
+    {
+        "date": "2024-09-17",
+        "type": "Update",
+        "desc": "ver0.5.3 Released!",
+        "path": "#Update_v0-5-3"
+    },
+    {
+        "date": "2024-10-05",
+        "type": "Update",
+        "desc": "ver0.5.4 Released!",
+        "path": "#Update_v0-5-4"
+    },
+    {
+        "date": "2024-10-27",
+        "type": "Update",
+        "desc": "ver0.6.0 Released!",
+        "path": "#Update_v0-6-0"
+    }
+]
