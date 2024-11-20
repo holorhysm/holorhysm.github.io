@@ -287,6 +287,10 @@ section#Top {
 }
 
 section#Install {
+    &>p.latest-info {
+        text-align: center;
+    }
+
     &>div.install-lists {
         padding-top: 1rem;
         display: block flex;
