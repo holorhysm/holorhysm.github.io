@@ -1,0 +1,82 @@
+{
+    "supports": [
+        "ja",
+        "en"
+    ],
+    "langName": {
+        "ja": "Japanese",
+        "en": "English"
+    },
+    "queries": [
+        {
+            "selector": "#Top>hgroup>p",
+            "ja": "ホロライブのファンメイドリズムゲーム",
+            "en": "hololive fanmade rhythm game"
+        },
+        {
+            "selector": "#Install>h2",
+            "ja": "インストール",
+            "en": "Install"
+        },
+        {
+            "selector": "#Install div.install-way[data-tag=android-native]>h3",
+            "ja": "Android OS用アプリ",
+            "en": "Android Native App"
+        },
+        {
+            "selector": "#Install div.install-way[data-tag=android-native]>h3+p",
+            "ja": "Android搭載端末向けアプリ",
+            "en": "Native App for Android devices."
+        },
+        {
+            "selector": "#Install div.install-way[data-tag=pwa]>h3",
+            "ja": "Webアプリ (PWA)",
+            "en": "Progressive Web App"
+        },
+        {
+            "selector": "#Install div.install-way[data-tag=pwa]>h3+p",
+            "ja": "インストール可能なWebアプリ",
+            "en": "Website which seems like Native Apps."
+        },
+        {
+            "selector": "#Install div.install-way[data-tag=ios-native]>h3",
+            "ja": "iOS用アプリ",
+            "en": "Native App for iOS"
+        },
+        {
+            "selector": "#Install div.install-way[data-tag=ios-native]>h3+p",
+            "ja": "iPhone・iPad向けアプリ",
+            "en": "Native App for iPhone and iPad."
+        },
+        {
+            "selector": "#News>h2",
+            "ja": "ニュース",
+            "en": "Latest News"
+        },
+        {
+            "selector": "#Update>h2",
+            "ja": "更新履歴",
+            "en": "Update Notes"
+        },
+        {
+            "selector": "#Teams>h2",
+            "ja": "利用規約/ガイドライン",
+            "en": "Teams / Guideline"
+        },
+        {
+            "selector": "#Require>h2",
+            "ja": "動作要件",
+            "en": "System Requirement"
+        },
+        {
+            "selector": "#Howto>h2",
+            "ja": "遊び方",
+            "en": "How to play"
+        },
+        {
+            "selector": "#Seizure>h2",
+            "ja": "光過敏性発作についての警告",
+            "en": "Seizure Warning"
+        }
+    ]
+}
