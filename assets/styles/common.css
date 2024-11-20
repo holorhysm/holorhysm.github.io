@@ -484,5 +484,9 @@ footer {
     &>small {
         display: block;
         text-align: center;
+
+        &>p+p {
+            margin-top: .5rem;
+        }
     }
 }
