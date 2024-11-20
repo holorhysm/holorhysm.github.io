@@ -463,16 +463,16 @@ section#Update {
     }
 }
 
-section:is(#Teams, #Require, #Seizure) {
+section:is(#Teams, #Require, #Howto, #Seizure) {
     &>article {
         margin-inline: 10%;
-        max-height: 50vh;
+        max-height: 67vh;
         overflow: hidden scroll;
     }
 }
 
 @media screen and (width <=768px) {
-    section:is(#Teams, #Require, #Seizure) {
+    section:is(#Teams, #Require, #Howto, #Seizure) {
         &>article {
             font-size: 0.8rem;
             margin-inline: 1rem;

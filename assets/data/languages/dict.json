@@ -49,6 +49,11 @@
             "en": "Native App for iPhone and iPad."
         },
         {
+            "selector": "#News>h2",
+            "ja": "ニュース",
+            "en": "Latest News"
+        },
+        {
             "selector": "#Update>h2",
             "ja": "更新履歴",
             "en": "Update Notes"
@@ -62,6 +67,11 @@
             "selector": "#Require>h2",
             "ja": "動作要件",
             "en": "System Requirement"
+        },
+        {
+            "selector": "#Howto>h2",
+            "ja": "遊び方",
+            "en": "How to play"
         },
         {
             "selector": "#Seizure>h2",
