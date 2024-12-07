@@ -4,5 +4,5 @@ hololiveをテーマにしたファンメイドのリズムゲーム『holorhysm
 
 ## クレジット
 
-- (c) 2023- Ayasaka-Koto
+- (c) 2023- holorhysm developer team
 - See also: [https://github.com/holorhysm](https://github.com/holorhysm)
