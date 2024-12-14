@@ -116,8 +116,8 @@ const $$ = selector => Array.from(document.querySelectorAll(selector));
     };
     // ニュース一覧は日付(新しい)順にソート
     newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
-    // 最新の最大10件を挿入
-    newsData.slice(0, 10).forEach(newsDatum => {
+    // 挿入
+    newsData.forEach(newsDatum => {
         newsListElement.appendChild(getNewsItemElement(newsDatum));
     });
 })();
