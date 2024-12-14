@@ -63,6 +63,6 @@ holorhysmの各譜面の著作権は譜面制作者が持っています。
 > However, you must abide by the following rules.
 > (By starting to use it, you are deemed to have agreed to the below terms and conditions.)
 > - If you use it, include your valid contact information (preferably an email address) in the place where the work you use is published, or in the work itself.
-> - If we think that we do not want to allow your use, we will contact you to that effect. In that case, follow our instructions and stop using it.
+> - If we think that we do not want to allow your use, we will ask you to stop using it and you need to follow it.
 > -  It is not necessary to credit us, but we would be very grateful if you did. If you do credit us, please use our handle name "holorhysm developer team".
 ```
