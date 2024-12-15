@@ -56,13 +56,13 @@ holorhysmの各譜面の著作権は譜面制作者が持っています。
 ただし、以下を必ず遵守してください。
 著作物の利用開始を以て、下記に同意したものとみなします。
 - あなたがこれを使用するときは、使用したものが公開されている場所、もしくは使用したものそのものにあなたの有効な連絡先情報(メールアドレスが望ましい)を記述してください。
-- もし、私が「あなたの使用方法は許可したくない」と考えたら、その旨を連絡します。そのときは必ず私の指示に従って使用を中止してください。
-- 私の名前をクレジットすることは必須ではありませんが、もししてくれるならとても嬉しいです。クレジット表記をする場合は、私のハンドルネームとして「holorhysm developer team」を記載してください。
+- もし、私たちが「あなたの使用方法は許可したくない」と考えたら、その旨を連絡します。そのときは必ず私たちの指示に従って使用を中止してください。
+- 私の名前をクレジットすることは必須ではありませんが、もししてくれるならとても嬉しいです。クレジット表記をする場合は、私たちのハンドルネームとして「holorhysm developer team」を記載してください。
 
 > You are free to use it, as long as you do not cause any harm to the author or use it in a way that violates public order and morality.
 > However, you must abide by the following rules.
 > (By starting to use it, you are deemed to have agreed to the below terms and conditions.)
 > - If you use it, include your valid contact information (preferably an email address) in the place where the work you use is published, or in the work itself.
-> - If I think that I do not want to allow your use, I will contact you to that effect. In that case, follow my instructions and stop using it.
-> -  It is not necessary to credit me, but I would be very grateful if you did. If you do credit me, please use my handle name "holorhysm developer team".
+> - If we think that we do not want to allow your use, we will ask you to stop using it and you need to follow it.
+> -  It is unnecessary to credit us, but we would be very grateful if you did. If you do credit us, please use our handle name "holorhysm developer team".
 ```
