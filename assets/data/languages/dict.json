@@ -19,6 +19,26 @@
             "en": "Install"
         },
         {
+            "selector": "#Install>.require-info>span.b",
+            "ja": "",
+            "en": "Available on "
+        },
+        {
+            "selector": "#Install>.require-info>b",
+            "ja": "Android, iOS",
+            "en": "Android, iOS"
+        },
+        {
+            "selector": "#Install>.require-info>span.a",
+            "ja": "対応",
+            "en": ""
+        },
+        {
+            "selector": "#Install>.require-info>u",
+            "ja": "(PC非対応)",
+            "en": "(Not available on PC)"
+        },
+        {
             "selector": "#Install div.install-way[data-tag=android-native]>h3",
             "ja": "Android OS用アプリ",
             "en": "Android Native App"

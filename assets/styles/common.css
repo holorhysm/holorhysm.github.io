@@ -303,6 +303,10 @@ section#Install {
         text-align: center;
     }
 
+    &>p.require-info {
+        text-align: center;
+    }
+
     &>div.install-lists {
         padding-top: 1rem;
         display: block flex;
