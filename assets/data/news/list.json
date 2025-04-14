@@ -88,5 +88,11 @@
         "type": "Update",
         "desc": "ver0.9.0 Released!",
         "path": "#Update_v0-9-0"
+    },
+    {
+        "date": "2025-04-14",
+        "type": "Update",
+        "desc": "ver0.10.0 Released!",
+        "path": "#Update_v0-10-0"
     }
 ]
