@@ -100,5 +100,11 @@
         "type": "Update",
         "desc": "ver0.11.0 Released!",
         "path": "#Update_v0-11-0"
+    },
+    {
+        "date": "2025-08-20",
+        "type": "Notice",
+        "desc": "holorhysm beta版の公開を終了しました",
+        "path": "https://x.com/holorhysm/status/1951115682629718108"
     }
 ]
